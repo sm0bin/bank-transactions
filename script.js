@@ -1,44 +1,50 @@
 // Deposit Button
 document.getElementById("deposit").addEventListener("click", function () {
     const depositField = document.getElementById("deposit-amount");
-    const depositValue = parseFloat(depositField.value);
-    console.log(depositValue, typeof (depositValue));
+    const depositAmount = parseFloat(depositField.value);
+    console.log(depositAmount)
 
     depositField.value = "";
-    if (isNaN(depositValue)) {
+    if (isNaN(depositAmount)) {
         alert("Insert Valid Amount!");
         return;
     }
 
     const totalDepositElement = document.getElementById("total-deposit");
-    let depositAmount = totalDepositElement.innerText;
-    depositAmount = parseFloat(depositAmount);
-    depositAmount += depositValue;
-    totalDepositElement.innerText = depositAmount;
+    const totalDepositText = totalDepositElement.innerText;
+    let totalDeposit = parseFloat(totalDepositText);
+    totalDeposit += depositAmount;
+    totalDepositElement.innerText = totalDeposit;
 
 });
 
 // Withdraw Button
 document.getElementById("withdraw").addEventListener("click", function () {
     const withdrawField = document.getElementById("withdraw-amount");
-    const withdrawValue = parseFloat(withdrawField.value);
+    const withdrawAmount = parseFloat(withdrawField.value);
 
     withdrawField.value = "";
-    if (isNaN(withdrawValue)) {
+    if (isNaN(withdrawAmount)) {
         alert("Insert Valid Amount!");
         return;
     }
 
-    const totalWithdrawElement = document.getElementById("total-withdraw");
-    let withdrawAmount = totalWithdrawElement.innerText;
-    withdrawAmount = parseFloat(withdrawAmount);
-    withdrawAmount += withdrawValue;
-    totalWithdrawElement.innerText = withdrawAmount;
-
-    // Balance Field Update
     const balanceElement = document.getElementById("balance");
     let balanceAmount = balanceElement.innerText;
     balanceAmount = parseFloat(balanceAmount);
-    balanceAmount -= withdrawValue;
+
+    if (withdrawAmount > balanceAmount) {
+        alert("Not Enough Money!");
+        return;
+    }
+
+    const totalWithdrawElement = document.getElementById("total-withdraw");
+    const totalWithdrawText = totalWithdrawElement.innerText;
+    totalWithdraw = parseFloat(totalWithdrawText);
+    totalWithdraw += withdrawAmount;
+    totalWithdrawElement.innerText = totalWithdraw;
+
+    // Balance Field Update
+    balanceAmount -= withdrawAmount;
     balanceElement.innerText = balanceAmount;
 });

@@ -33,48 +33,17 @@
 </head>
 
 <body>
-    <main class="w-8/12 mx-auto text-indigo-950">
-        <h1 class="text-5xl font-bold text-center text-indigo-950 my-8 font-poppins">Deposit Withdraw</h1>
-        <!-- Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div class="bg-indigo-300 p-8 rounded-xl">
-                <h2 class="text-xl font-bold font-poppins">Deposit</h2>
-                <h4 class="text-5xl font-light font-oswald">$<span id="total-deposit">00</span></h4>
-            </div>
-            <div class="bg-indigo-300 p-8 rounded-xl">
-                <h2 class="text-xl font-bold font-poppins">Withdraw</h2>
-                <h4 class="text-5xl font-light font-oswald">$<span id="total-withdraw">00</span></h4>
-            </div>
-            <div class="bg-indigo-300 p-8 rounded-xl">
-                <h2 class="text-xl font-bold font-poppins">Balance</h2>
-                <h4 class="text-5xl font-light font-oswald">$<span id="balance">1500</span></h4>
-            </div>
+    <main class="w-full mx-auto text-indigo-950 h-full my-24">
+        <div class="bg-indigo-300 p-8 rounded-xl font-poppins w-1/3 mx-auto">
+            <h2 class="text-xl font-bold text-center">Login</h2>
+            <input id="email" class="block my-4 p-5 rounded-md w-full" type="email" placeholder="Enter Email">
+            <input id="password" class="block my-4 p-5 rounded-md w-full" type="password" placeholder="Enter Password">
+            <button id="login"
+                class="bg-indigo-500 hover:bg-indigo-700 text-white p-5 rounded-md font-semibold w-full">Login</button>
         </div>
-
-        <!-- Forms -->
-        <!-- Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-indigo-300 p-8 rounded-xl font-poppins">
-                <h2 class="text-xl font-bold">Enter Deposit Amount:</h2>
-                <input id="deposit-amount" class="block my-4 p-5 rounded-md w-11/12" type="text">
-                <button id="deposit"
-                    class="bg-indigo-500 hover:bg-indigo-700 text-white py-4 px-7 rounded-md font-semibold">Deposit</button>
-            </div>
-
-            <div class="bg-indigo-300 p-8 rounded-xl font-poppins">
-                <h2 class="text-xl font-bold">Enter Withdraw Amount:</h2>
-                <input id="withdraw-amount" class="block my-4 p-5 rounded-md w-11/12" type="text">
-                <button id="withdraw"
-                    class="bg-indigo-500 hover:bg-indigo-700 text-white py-4 px-7 rounded-md font-semibold">Withdraw</button>
-            </div>
-        </div>
-
-
     </main>
 
-
-
-    <script src="script.js"></script>
+    <script src="login.js"></script>
 </body>
 
 </html>
