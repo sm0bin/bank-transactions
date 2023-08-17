@@ -16,6 +16,13 @@ document.getElementById("deposit").addEventListener("click", function () {
     totalDeposit += depositAmount;
     totalDepositElement.innerText = totalDeposit;
 
+    // Balance Field Update
+    const balanceElement = document.getElementById("balance");
+    let balanceAmount = balanceElement.innerText;
+    balanceAmount = parseFloat(balanceAmount);
+    balanceAmount += depositAmount;
+    balanceElement.innerText = balanceAmount;
+
 });
 
 // Withdraw Button
